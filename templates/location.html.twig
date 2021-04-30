@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}">
+    <title>Location</title>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <h1>My <span>Weather</span></h1>
+            </div>
+            <ul class="navigation">
+                <a href={{ path('weather') }}><li>Weather</li></a>
+                <a href={{ path('location') }}><li>Location</li></a>
+            </ul>
+        </div>
+    </div>
+    <div>
+        {{ form_start(form) }}
+            <div class="form-group">
+                <label class="sr-only">Name</label>
+                {{ form_widget(form.input) }}
+            </div>
+            {{ form_widget(form.search) }}
+        {{ form_end(form) }}
+    </div>
+</body>
+</html>

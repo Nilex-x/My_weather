@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/home.css') }}">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_header">
+            <div class="logo_container">
+                <h1>My <span>Weather</span></h1>
+            </div>
+            <ul class="navigation">
+                <a href={{ path('weather') }}><li>Weather</li></a>
+                <a href={{ path('location') }}><li>Location</li></a>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h1>La météo de {{ weather["name"] }} </h1>
+        <img alt="weather" id="icon"
+        src="http://openweathermap.org/img/w/{{ weather["weather"]["0"]["icon"] }}.png"
+        style="width: 15%;">
+        <h1>La température est de {{ temp[0] }}°c et elle est ressentie a {{ temp[2] }}°c </h1>
+        <h1>La vitesse du vent est de {{ weather["wind"]["speed"] }} km/h </h1>
+        <h1>La température maximal sera de {{ temp[4] }}°c et la minimal est de {{temp[5]}}°c </h1>
+        <h1>L'humidité est de {{ weather["main"]["humidity"] }}% </h1>
+        <h1>La pression atmosphérique est de {{ weather["main"]["pressure"] }}hPa </h1>
+    </div>
+</body>
+</html>

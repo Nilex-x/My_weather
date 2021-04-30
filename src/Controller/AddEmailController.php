@@ -9,14 +9,6 @@ use Symfony\Component\Mime\Email;
 
 class AddEmailController extends AbstractController
 {
-    /**
-     * @Route("/addemail", name="newemail")
-     */
-    public function SendEmail(MailerInterface $mailer)
-    {
-        
-    }
-
     public function GetEmail(Request $request)
     {
         $form = $this->createFormBuilder()
